@@ -1,0 +1,23 @@
+{
+  "name": "hahow-recruit",
+  "version": "1.0.0",
+  "description": "- [前端小專案說明](frontend.md) - [後端小專案說明](backend.md) - [測試端小專案說明](quality.md)",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennifershih/hahow-recruit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jennifershih/hahow-recruit/issues"
+  },
+  "homepage": "https://github.com/jennifershih/hahow-recruit#readme",
+  "devDependencies": {
+    "cypress": "^7.3.0"
+  }
+}

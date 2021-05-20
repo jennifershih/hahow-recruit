@@ -17,9 +17,6 @@ describe('contributors', () => {
       })
       var resultString = JSON.stringify(usernames)
       cy.log(resultString);
-      // cy.log(usernames.toString());
     });
-
-    
   }); 
 });

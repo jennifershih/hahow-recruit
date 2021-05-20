@@ -1,9 +1,9 @@
 # 測試端小專案
 
-## Fork專案
-- 到 [hahow-recruit](https://github.com/hahow/hahow-recruit) fork專案到 [我的專案](https://github.com/jennifershih/hahow-recruit)
+## Fork 專案
+- 到 [hahow-recruit](https://github.com/hahow/hahow-recruit) fork 專案到 [我的專案](https://github.com/jennifershih/hahow-recruit)
 
-## Cypress安裝
+## Cypress 安裝
 - 在 [Node.js官方網站](https://nodejs.org/en/download/) 直接下載 Node.js 並安裝 
 - 執行 ```npm init``` 命令來生成 package.json 文件
 - 使用 ```npm install cypress --save-dev``` 命令安裝 Cypress

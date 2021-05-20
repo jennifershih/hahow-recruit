@@ -44,7 +44,7 @@
 - 使用 `cy.get` 取得 commit-author 的元素後，再使用 `cy.log` 把它印出來
 
 ## 執行腳本
-- 執行```cypress:open```命令
+- 執行 ```cypress:open``` 命令
 
 ## 將專案 commit 到 git，並 push 到專案中
 - [我的專案](https://github.com/jennifershih/hahow-recruit)

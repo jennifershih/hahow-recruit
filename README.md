@@ -37,10 +37,10 @@
 - 使用 `cy.get` 取得 Counter 的元素，再使用 `cy.log` 把它印出來
 - 使用 `cy.get` 取得每一個合作者的陣列，將陣列轉為字串後，再使用 `cy.log` 把它印出來
 
-#### 第二題:請進入到 frontend.md 並且查看 "Wireframe" 的圖片是否存在
-- 使用 `cy.visit` 到 frontend.md 後，用斷言寫圖片應該存在，如果圖片存在，腳本可以執行通過
+#### 第二題：請進入到 frontend.md 並且查看 "Wireframe" 的圖片是否存在
+- 使用 `cy.visit` 到 [frontend.md](https://github.com/hahow/hahow-recruit/blob/master/frontend.md) 後，用斷言寫圖片應該存在，如果圖片存在，腳本可以執行通過
 
-#### 第三題:最後一個 commit 的人是誰
+#### 第三題：最後一個 commit 的人是誰
 - 使用 `cy.get` 取得 commit-author 的元素後，再使用 `cy.log` 把它印出來
 
 ## 執行腳本

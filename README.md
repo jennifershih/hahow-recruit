@@ -3,21 +3,26 @@
 ## Fork 專案
 - 到 [hahow-recruit](https://github.com/hahow/hahow-recruit) fork 專案到 [我的專案](https://github.com/jennifershih/hahow-recruit)
 
-## Cypress 安裝
-- 在 [Node.js官方網站](https://nodejs.org/en/download/) 直接下載 Node.js 並安裝 
-- 執行 ```npm init``` 命令來生成 package.json 文件
-- 使用 ```npm install cypress --save-dev``` 命令安裝 Cypress
-- 使用 ```npx cypress open``` 命令啟用 Cypress
+## 執行方式（2026 更新）
 
-## 配置 package.json 文件
-- 在 package.json 文件裡，新增 scripts，更改如下：
- ```"scripts": {"cypress:open": "cypress open","cypress:run": "cypress run"}```
-  
+需要 Node.js 22 以上。
+
+```bash
+npm install
+npm test            # 跑全部測試（headless）
+npm run test:api    # 只跑 SWAPI 的 API 測試
+npm run test:ui     # 只跑 GitHub 頁面的 UI 測試
+npm run cy:open     # 開啟 Cypress 互動介面
+```
+
+2026 年更新內容：Cypress 7 升級到 16（`cypress.config.js`、`cypress/e2e/**/*.cy.js`）；每題都加上真正的斷言，不再只是印出結果；
+車輛分頁抓取改成共用的 `cy.swapiAll()` 指令並統一使用 HTTPS；GitHub 已改版，UI 測試改用 `data-testid`、`data-component` 等較穩定的選擇器；加上 GitHub Actions CI。
+
 ## 解題思路
 ### API
 #### 第一題：有多少不同種族的人出現在第六部？
-- 先打 API：https://swapi.dev/api/films/6/
-- 將 species 的數量算出，並用 `cy.log` 印出來
+- 先打 API：https://swapi.dev/api/films/6/（「第六部」解讀為 SWAPI 的第 6 部電影）
+- 用 `Set` 算出不重複的種族數量，並用 `cy.log` 印出來
 
 #### 第二題：請依據電影集數去排序電影名字？
 - 先打 API：https://swapi.dev/api/films
@@ -26,9 +31,9 @@
 - 將電影的名字印出
 
 #### 第三題：請幫我挑出電影裡所有的車輛，馬力超過１０００的。
-- 先打 API：http://swapi.dev/api/vehicles/
-- 使用 `Array.prototype.filter()` 過濾馬力
-- 因 API 有 "next": "http://swapi.dev/api/vehicles/?page=2", 因此使用條件判斷是否繼續打API
+- 先打 API：https://swapi.dev/api/vehicles/
+- 用自訂指令 `cy.swapiAll('vehicles')` 依 `next` 欄位抓完所有分頁
+- 使用 `Array.prototype.filter()` 過濾 `max_atmosphering_speed`，`unknown` 會被排除
 - 將車輛的名字印出
 
 ### UI
@@ -43,8 +48,6 @@
 #### 第三題：最後一個 commit 的人是誰
 - 使用 `cy.get` 取得 commit-author 的元素後，再使用 `cy.log` 把它印出來
 
-## 執行腳本
-- 執行 ```cypress:open``` 命令
 
 ## 將專案 commit 到 git，並 push 到專案中
 - [我的專案](https://github.com/jennifershih/hahow-recruit)
